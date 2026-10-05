@@ -26,7 +26,7 @@ OPTIONS=menucolors
 OPTIONS=time
 OPTIONS=showexp
 OPTIONS=showscore
-OPTIONS=showrace
+OPTIONS=!showrace
 OPTIONS=showweight
 
 # Helpful map behavior
