@@ -1,0 +1,181 @@
+Nethack 5.0 - curses configuration
+# ============================================================
+
+# --- Window system ---
+OPTIONS=windowtype:curses
+
+# Use colors provided by the terminal.
+OPTIONS=color
+OPTIONS=guicolor
+OPTIONS=windowborders:1
+
+# Do NOT define OPTIONS=palette:... unless you explicitly
+# want to override your terminal color scheme.
+
+
+# ============================================================
+# Interface
+# ============================================================
+
+OPTIONS=mouse_support:1
+OPTIONS=hilite_pet
+OPTIONS=perm_invent
+OPTIONS=force_invmenu
+OPTIONS=menucolors
+
+OPTIONS=time
+OPTIONS=showexp
+OPTIONS=showscore
+OPTIONS=showrace
+OPTIONS=showweight
+
+# Helpful map behavior
+OPTIONS=lit_corridor
+
+# Don't show the old startup warning repeatedly.
+OPTIONS=suppress_alert:3.3.1
+
+
+# ============================================================
+# Movement
+# ============================================================
+
+# Uncomment if you like numeric-keypad movement:
+# OPTIONS=number_pad:1
+
+# Alternatively:
+# OPTIONS=number_pad:2
+
+
+# ============================================================
+# Autopickup
+# ============================================================
+
+OPTIONS=autopickup
+
+# Gold, gems, weapons, armor, food, potions, scrolls,
+# spellbooks, wands, rings, amulets and tools.
+OPTIONS=pickup_types:$"=/!?+([%*
+
+# You can disable autopickup entirely instead:
+# OPTIONS=!autopickup
+
+
+# ============================================================
+# Status bar
+# ============================================================
+
+OPTIONS=statushilites
+OPTIONS=hitpointbar
+
+# --------------------
+# HP
+# --------------------
+
+OPTIONS=hilite_status:hitpoints/100%/gray&normal
+OPTIONS=hilite_status:hitpoints/<100%/green&normal
+OPTIONS=hilite_status:hitpoints/<66%/yellow&normal
+OPTIONS=hilite_status:hitpoints/<50%/orange&normal
+OPTIONS=hilite_status:hitpoints/<33%/red&bold
+OPTIONS=hilite_status:hitpoints/<15%/red&inverse
+
+# --------------------
+# Power / Pw
+# --------------------
+
+OPTIONS=hilite_status:power/100%/gray&normal
+OPTIONS=hilite_status:power/<100%/green&normal
+OPTIONS=hilite_status:power/<66%/yellow&normal
+OPTIONS=hilite_status:power/<50%/orange&normal
+OPTIONS=hilite_status:power/<33%/red&bold
+
+# --------------------
+# Attributes
+# --------------------
+
+OPTIONS=hilite_status:characteristics/up/green/down/red
+
+# --------------------
+# Gold
+# --------------------
+
+OPTIONS=hilite_status:gold/up/yellow/down/brown
+
+# --------------------
+# Encumbrance
+# --------------------
+
+OPTIONS=hilite_status:cap/burdened/yellow/stressed/orange/strained/red&bold/overtaxed/red&inverse/overloaded/red&inverse&blink
+
+# --------------------
+# Hunger
+# --------------------
+
+OPTIONS=hilite_status:hunger/satiated/yellow/hungry/orange/weak/red&bold/fainting/red&inverse/fainted/red&inverse&blink
+
+# --------------------
+# Mental conditions
+# --------------------
+
+OPTIONS=hilite_status:condition/hallu/yellow
+OPTIONS=hilite_status:condition/conf/orange
+OPTIONS=hilite_status:condition/stun/red&bold
+
+# --------------------
+# Dangerous conditions
+# --------------------
+
+OPTIONS=hilite_status:condition/termill/red&inverse
+OPTIONS=hilite_status:condition/foodpois/red&inverse
+OPTIONS=hilite_status:condition/slime/red&inverse
+
+
+# ============================================================
+# Inventory menu colors
+# ============================================================
+
+# Blessed items
+MENUCOLOR=" blessed " = green
+MENUCOLOR=" holy " = green
+
+# Cursed items
+MENUCOLOR=" cursed " = red
+MENUCOLOR=" unholy " = red
+
+# Make cursed worn equipment especially obvious
+MENUCOLOR=" cursed .* \(being worn\)" = orange&underline
+
+
+# ============================================================
+# Character / game preferences
+# ============================================================
+
+# Set these if you want fixed defaults:
+# OPTIONS=name:YourName
+# OPTIONS=role:Wizard
+# OPTIONS=race:Human
+# OPTIONS=gender:male
+# OPTIONS=align:neutral
+
+# Pet names:
+# OPTIONS=dogname:Fido
+# OPTIONS=catname:Morris
+# OPTIONS=horsename:Silver
+
+# Fruit:
+# OPTIONS=fruit:slime mold
+
+
+# ============================================================
+# Misc
+# ============================================================
+
+# Boulder displayed as 0
+OPTIONS=boulder:0
+
+# Some people prefer this:
+# OPTIONS=rest_on_space
+
+# Avoid accidental quit/tutorial clutter
+OPTIONS=!tutorial
+OPTIONS=!tips
